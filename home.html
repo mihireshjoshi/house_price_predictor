@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        nav{
+            background-color: rgba(0, 0, 0, 0.62);
+        }
+        .con_box{
+            margin: auto;
+            width: 70%;
+            margin-top: 10%;
+        }
+        #headline{
+            color: #9BCB7E;
+            font-family: Manrope;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 800;
+            text-align: center;
+            justify-content: center;
+        }
+        #brief{
+            color: #D8D8D8;
+            font-family: Manrope;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            text-shadow: 0px 0px 10px rgb(0, 0, 0);
+        }
+        #line{
+            background: #FFF;
+            height: 0.4px;
+            margin-top: 6%;
+            margin-bottom: 6%;
+            
+        }
+        .sub_head{
+            text-align: center;
+            color: #FFF;
+            font-family: Manrope;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 2%;
+        }
+        .sub_sub_head{
+            color: #D8D8D8;
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            margin-bottom: 1.5%;
+        }
+        .rules{
+            color: #FFF;
+            font-family: Manrope;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+        }
+        .note{
+            color: #FF6868;
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+        }
+        .note_cont{
+            color: #FFF;
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+        }
+        button{
+            border-radius: 10px;
+            border: none;
+            background: #3F7DB2;
+            box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.50);
+            color: #FFF;
+            font-family: Manrope;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            padding: 3% 8%;
+            margin-top: 5%;
+        }
+        button:hover{
+            box-shadow: 0px 0px 7px 2px rgba(63, 125, 178, 0.5);
+            transition: 0.7s;
+            -webkit-transform: scale(1.2);
+	        transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+              <span class="navbar-brand mb-0" style="color: white;">House Price Predictor</span>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <div class="con_box">
+            <div class="row">
+                <div class="col-5" id="headline">
+                    <span>Minimum Details</span>
+                </div>
+                <div class="col-7" id="brief">
+                    <span>Very basic details regarding to your house are required. This details are easy to calculate. Details which help the Machine Learning model to understand the dynamics of your house like BHK, Area Squarefeet, Whether its a BHK or RK. Also Details which help us understand the geography of your house like Longitude and Latitude.</span>
+                </div>
+            </div>
+            <div class="row" id="line"></div>
+            <div class="row">
+                <div class="col-7" id="brief">
+                    <span>You don’t have to answer to many questions. Just input basic required measurements which are very easy to calculate and then just let the Machine Learning do it’s job.</span>
+                </div>
+                <div class="col-5" id="headline">
+                    <span>Easy Prediction</span>
+                </div>
+            </div>
+            <div id="line"></div>
+            <div class="row">
+                <span class="sub_head">Try now for FREE!</span>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <span class="sub_sub_head">The basic ML model is free to use, following are the steps:</span>
+                    </div>
+                    <div class="row">
+                        <ol class="rules">
+                            <li>Click on the button to be redirected to the form.</li>
+                            <li>Enter the details required (be careful while you input details as these details decide the price of your house.)</li>
+                            <li>Click on the ‘Predict’ button and then the resulted will be displayed. To use the model follow the same steps again.</li>
+                        </ol>
+                    </div>
+                    <div class="row">
+                        <div class="note_cont"><span class="note">NOTE:</span>It’s just a prediction and should be considered as a reference or estimated value. For some inputs the ML does not provide an accurate prediction.</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <span class="sub_head" style="color: #9BCB7E;">Click below for form</span>
+                    </div>
+                    <div class="row">
+                        <a href="form.html" class="btn"><button>FORM</button></a>
+                    </div>
+                </div>
+            </div>
+            <div id="line"></div>
+        </div>     
+    </section>
+</body>
+</html>
