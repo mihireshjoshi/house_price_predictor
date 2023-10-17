@@ -5,7 +5,7 @@ import pickle
 
 dt_model = pickle.load(open('house_price_predictor_dt.pkl','rb'))
 
-app = Flask(__name__,static_url_path='/static')
+app = Flask(__name__,static_url_path='/static',template_folder="templates")
 
 @app.route('/')
 def home():
@@ -17,6 +17,7 @@ def form():
 
 @app.route('/predict', methods=['GET', 'POST'])
 def ml():
+    prediction = None
     if request.method == 'POST':
         try:
             # Get input values from the HTML form
@@ -41,7 +42,7 @@ def ml():
         except Exception as e:
             return jsonify({'error': str(e)})
 
-    return render_template('results.html', result = prediction + " Lakhs")
+    return render_template('results.html', result = (str(prediction)) + " Lakhs")
 
 if __name__ == '__main__':
     app.run(debug=True)
