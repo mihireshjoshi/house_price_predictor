@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        nav{
+            background-color: rgba(0, 0, 0, 0.62);
+        }
+        #return{
+            color: white;
+            text-decoration: none;
+        }
+        #headline{
+            color: #9BCB7E;
+            font-family: Manrope;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 800;
+            text-align: start;
+        }
+        .box{
+            width: 80%;
+            margin: auto;
+            margin-top: 0%;
+        }
+        #line{
+            background: #FFF;
+            height: 0.4px;
+            margin-top: 1%;
+            margin-bottom: 3%;
+        }
+        label{
+            color: #FFF;
+            font-family: Manrope;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            text-align: end;
+            text-shadow: 0px 0px 10px rgb(0, 0, 0);
+        }
+        input{
+            text-align: center;
+            border-radius: 7px;
+            border: 1px solid rgba(155, 203, 126, 0.52);
+            background: rgba(0, 0, 0, 0.62);
+            color: white;
+            padding: 1% 3%;
+            box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.50);
+        }
+        #level{
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 2%;
+        }
+        .btna{
+            border-radius: 10px;
+            border: none;
+            background: rgba(155, 203, 126, 0.52);
+            box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.50);
+            color: #FFF;
+            font-family: Manrope;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            padding: 0.5% 2.5%;
+        }
+        .btna:hover{
+            box-shadow: 0px 0px 7px 2px rgba(155, 203, 126, 0.2);
+            transition: 0.7s;
+            -webkit-transform: scale(1.2);
+	        transform: scale(1.2);
+        }
+    </style>
+    <script>
+        function val(){
+            let sqft = document.getElementById("sqft").value;
+            let lo = document.getElementById("lo").value;
+            let la = document.getElementById("la").value;
+            let bhk = document.getElementById("bhk").value;
+            let rera = document.getElementById("rera").value;
+            let brk = document.getElementById("brk").value;
+            let rom = document.getElementById("rom").value;
+            let resale = document.getElementById("resale").value;
+            let uc = document.getElementById("uc").value;
+
+            if(isNaN(sqft)){
+                alert("Enter a number in sqft")
+                return false;
+            }
+            if(isNaN(bhk)){
+                alert("Enter a number in bhk")
+                return false;
+            }
+            if(isNaN(lo)){
+                alert("Enter a number in lo")
+                return false;
+            }
+            if(isNaN(la)){
+                alert("Enter a number in la")
+                return false;
+            }
+            
+            if(brk=="BHK"){
+                brk=0;
+            }
+            else{
+                brk=1;
+            }
+            
+            
+
+
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+              <a class="navbar-brand mb-0" id="return" href="home.html" action="/">House Price Predictor</a>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <form class="box" onsubmit="return val()" method="post" action="/predict">
+            <div class="row" id="headline">Dynamics</div>
+            <div id="line"></div>
+            <div class="row" id="level">
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">Area (in sqft.)</label>
+                        <input class="col-6" id="sqft" type="text">
+                    </div>
+                </div>
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">BHK</label>
+                        <input class="col-6" id="bhk" type="text">
+                    </div>
+                </div>
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">BRK</label>
+                        <input class="col-6" id="brk" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="level">
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">Longitude</label>
+                        <input class="col-6" id="lo" type="text">
+                    </div>
+                </div>
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">Latitude</label>
+                        <input class="col-6" id="la" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="headline" style="margin-top: 7%;">Other info</div>
+            <div id="line"></div>
+            <div class="row" id="level">
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">Under Construction</label>
+                        <input class="col-6" id="uc" type="text">
+                    </div>
+                </div>
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">Ready to move</label>
+                        <input class="col-6" id="rom" type="text">
+                    </div>
+                </div>
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">Resale</label>
+                        <input class="col-6" id="resale" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="level">
+                <div class="col-4" id="inbo">
+                    <div class="row">
+                        <label class="col-6">RERA Certified</label>
+                        <input class="col-6" id="rera" type="text">
+                    </div>
+                </div>
+            </div>
+            <button class="btna" type="submit">Predict</button>
+            
+        </form>
+    </section>
+</body>
+</html>
